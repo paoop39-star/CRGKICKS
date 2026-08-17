@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CRG Kicks</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -13,163 +15,385 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
             background: #ffffff;
             color: #111111;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
+        /* HEADER */
+
         header {
-            padding: 25px 20px;
+            width: 100%;
+            padding: 22px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.95);
+            z-index: 10;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 900;
+            font-size: 18px;
+            font-weight: 800;
             letter-spacing: 2px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #111;
-            margin-left: 15px;
-            font-size: 13px;
-            font-weight: bold;
+        nav {
+            display: flex;
+            gap: 20px;
         }
 
+        nav a {
+            color: #111;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* HERO */
+
         .hero {
-            min-height: 70vh;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 30px 20px;
-            background: #f3f3f3;
+            padding: 40px 20px;
         }
 
         .hero h1 {
-            font-size: 55px;
+            font-size: clamp(55px, 16vw, 150px);
             font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: -5px;
+            line-height: 0.9;
         }
 
         .hero p {
-            margin-top: 15px;
-            font-size: 15px;
+            margin-top: 25px;
+            font-size: 10px;
+            letter-spacing: 3px;
             color: #555;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background: #111;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .scroll {
+            margin-top: 80px;
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: #777;
+        }
+
+        /* PRODUCTS */
+
+        .shop {
+            padding: 70px 15px;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 0 5px;
+        }
+
+        .section-title h2 {
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .section-title span {
+            font-size: 10px;
+            color: #777;
         }
 
         .products {
-            padding: 50px 20px;
-        }
-
-        .products h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
-
-        .product-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 8px;
         }
 
         .product {
-            background: #f5f5f5;
-            padding-bottom: 15px;
+            text-decoration: none;
+            color: #111;
         }
 
         .product-image {
-            height: 220px;
-            background: #ddd;
+            width: 100%;
+            aspect-ratio: 1 / 1.15;
+            background: #eeeeee;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: #777;
-            font-size: 13px;
+            align-items: center;
+            color: #999;
+            font-size: 9px;
+            letter-spacing: 1px;
         }
 
-        .product h3 {
-            font-size: 15px;
-            margin: 12px 10px 5px;
+        .product-info {
+            padding: 12px 3px 25px;
         }
 
-        .product p {
-            margin-left: 10px;
-            font-weight: bold;
+        .product-name {
+            font-size: 12px;
+            font-weight: 600;
         }
+
+        .product-price {
+            margin-top: 5px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        /* INFO */
+
+        .info {
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .info h2 {
+            font-size: 28px;
+            letter-spacing: -1px;
+        }
+
+        .info p {
+            max-width: 450px;
+            margin: 20px auto 0;
+            font-size: 12px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* FOOTER */
 
         footer {
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 1px solid #ddd;
-            font-size: 12px;
-            color: #666;
+            padding: 35px 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            letter-spacing: 1px;
         }
+
+        footer a {
+            color: #111;
+            text-decoration: none;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px 15px;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                letter-spacing: -4px;
+            }
+
+            .products {
+                gap: 6px;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">CRG KICKS</div>
+    <!-- HEADER -->
 
-    <nav>
-        <a href="#shop">SHOP</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
-</header>
+    <header>
 
-<section class="hero">
-    <h1>CRG KICKS</h1>
-    <p>STREETWEAR • SNEAKERS • CULTURE</p>
-
-    <a href="#shop" class="button">SHOP NOW</a>
-</section>
-
-<section class="products" id="shop">
-    <h2>FEATURED</h2>
-
-    <div class="product-grid">
-
-        <div class="product">
-            <div class="product-image">
-                PRODUCT IMAGE
-            </div>
-            <h3>Coming Soon</h3>
-            <p>S/ 000</p>
+        <div class="logo">
+            CRG KICKS
         </div>
 
-        <div class="product">
-            <div class="product-image">
-                PRODUCT IMAGE
-            </div>
-            <h3>Coming Soon</h3>
-            <p>S/ 000</p>
+        <nav>
+            <a href="#shop">SHOP</a>
+            <a href="#info">INFO</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>CRG</h1>
+
+        <p>
+            SNEAKERS · STREETWEAR · CULTURE
+        </p>
+
+        <div class="scroll">
+            SCROLL TO EXPLORE
         </div>
 
-    </div>
-</section>
+    </section>
 
-<footer id="contact">
-    CRG KICKS © 2026
-</footer>
+
+    <!-- SHOP -->
+
+    <section class="shop" id="shop">
+
+        <div class="section-title">
+
+            <h2>NEW ARRIVALS</h2>
+
+            <span>01 — 04</span>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <a class="product" href="#">
+
+                <div class="product-image">
+                    PRODUCT IMAGE
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        NIKE
+                    </div>
+
+                    <div class="product-price">
+                        S/ 699
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PRODUCT 2 -->
+
+            <a class="product" href="#">
+
+                <div class="product-image">
+                    PRODUCT IMAGE
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        SUPREME
+                    </div>
+
+                    <div class="product-price">
+                        S/ 799
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PRODUCT 3 -->
+
+            <a class="product" href="#">
+
+                <div class="product-image">
+                    PRODUCT IMAGE
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        BAPE
+                    </div>
+
+                    <div class="product-price">
+                        S/ 599
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PRODUCT 4 -->
+
+            <a class="product" href="#">
+
+                <div class="product-image">
+                    PRODUCT IMAGE
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        NEW BALANCE
+                    </div>
+
+                    <div class="product-price">
+                        S/ 699
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFO -->
+
+    <section class="info" id="info">
+
+        <h2>CRG KICKS</h2>
+
+        <p>
+            Sneakers y streetwear seleccionados.
+            Piezas que representan nuestra cultura,
+            nuestro estilo y nuestra forma de vestir.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>
+            © 2026 CRG KICKS
+        </span>
+
+        <a href="#">
+            INSTAGRAM
+        </a>
+
+    </footer>
+
 
 </body>
 </html>
